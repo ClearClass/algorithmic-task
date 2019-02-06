@@ -10,13 +10,19 @@ public class WordChainTest {
 	String[] words = {"магия", "ясновидение", "енот", "тоник", "кошка", "амулет", 
 			"текстолит", "телескоп", "погадка", "анклав", "водомерка", "агроном"};
 	
-	HashSet<String> set = new HashSet<>(Arrays.asList(words));
-	WordChain chain = new WordChain("погадка", set);
+	List<String> list = new ArrayList<>(words.length);
+	{
+		for(String word : words)
+			list.add(word);
+		Collections.shuffle(list);
+	}
+		
+	WordChain chain = new WordChain("погадка", list);
 	LinkedList<String> result = chain.getResult();
 	
 	@Test
-	public void verify(){
-		assertTrue(result.size()==set.size());
+	public void verify(){	
+		assertTrue(result.size()==list.size());
 		
 		String lastWord = result.getLast();
 		char previous = lastWord.charAt(lastWord.length()-1);
@@ -30,7 +36,7 @@ public class WordChainTest {
 	
 	@Test
 	public void view(){
-		 System.out.println(set);
+		 System.out.println(list);
 		 System.out.println(result);
 	}
 }

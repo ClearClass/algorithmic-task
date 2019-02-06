@@ -8,11 +8,11 @@ public class WordChain {
 	private boolean findChain = false;
 	private LinkedList<String> result = new LinkedList<>();
 
-	public WordChain(String word, HashSet<String> set) {
-		if(!set.contains(word)) 
+	public WordChain(String word, List<String> list) {
+		if(!list.contains(word)) 
 			throw new RuntimeException(word + " is not in the set");
-		setSize = set.size();
-		tree = new Node(word, set);
+		setSize = list.size();
+		tree = new Node(word, list);
 		traverse(tree);
 	}
 	
@@ -38,18 +38,17 @@ public class WordChain {
 		String word;
 		Set<Node> setNodes = new HashSet<>(); // слова, начинающиеся на word[last]
 		
-		Node(String word, HashSet<String> set){
+		Node(String word, List<String> list){
 			this.word = word;
-			HashSet<String> reduceSet = (HashSet<String>) set.clone();
-			// запрещается изменять коллекцию, для которой был получен итератор
-			reduceSet.remove(word); 
-			Iterator<String> it = reduceSet.iterator();
+			int wordIndex = list.indexOf(word);
+			list.remove(word);
 			char thisLastChar = word.charAt(word.length()-1);
-			while(it.hasNext()) {
-				String st = it.next();
+			for(int i=0; i<list.size(); i++){
+				String st = list.get(i);
 				if(thisLastChar==st.charAt(0))
-					setNodes.add(new Node(st, reduceSet));
+					setNodes.add(new Node(st, list));
 			}
+			list.add(wordIndex, word);
 		}
 	}
 }
