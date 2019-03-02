@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public class ArrayRevertTest {
 	@Test
 	public void compare(){

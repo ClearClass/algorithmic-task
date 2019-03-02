@@ -8,3 +8,5 @@ target/
 
 # Other
 dictionary.txt
+dictionary.mv.db
+dictionary.trace.db
