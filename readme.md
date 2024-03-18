@@ -34,12 +34,12 @@ Maven-проект с решениями различных алгоритмич
 
 Разработать программу для составления кроссворда-колодца на основе словаря из текстового файла. Пример:
 
-      л           э  
+      в           э  
     п е р е п а й к а
-      с           з  
-      б           о  
-      и           с  
-      я           ф  
+      ч           з  
+      е           о  
+      р           с  
+      и           ф  
       н           е  
     с к е й т б о р д
       а           а  
@@ -65,3 +65,7 @@ Maven-проект с решениями различных алгоритмич
 ##### Задача №8 ([`OverlayLines.java`](src/main/java/lib/clearclass/tasks/OverlayLines.java), [`OverlayLinesTest.java`](src/test/java/lib/clearclass/tasks/OverlayLinesTest.java))
 
 На пpямой своими концами заданы N отpезков. Найти интервал, принадлежащий максимальному количеству отрезков. (Если таких интервалов несколько, определить ближайший из них).
+
+##### Задача №9 ([`NumberPermutation.java`](src/main/java/lib/clearclass/tasks/NumberPermutation.java), [`NumberPermutationTest.java`](src/test/java/lib/clearclass/tasks/NumberPermutationTest.java))
+
+Построить алгоритм, выдающий без повторений все перестановки N чисел.
